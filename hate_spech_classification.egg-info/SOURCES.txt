@@ -1,0 +1,6 @@
+README.md
+setup.py
+hate_spech_classification.egg-info/PKG-INFO
+hate_spech_classification.egg-info/SOURCES.txt
+hate_spech_classification.egg-info/dependency_links.txt
+hate_spech_classification.egg-info/top_level.txt
