@@ -1,0 +1,17 @@
+[2025-09-22 18:05:11,477 ] root - INFO - Entered the run_pipeline method of Trainpipeline class
+[2025-09-22 18:05:11,478 ] root - INFO - Entered the start_data_ingestion method of TrainPipeline class
+[2025-09-22 18:05:11,478 ] root - INFO - Getting the data from local drive
+[2025-09-22 18:05:11,478 ] root - INFO - Entered the initiate_data_ingestion method of DataIngestion class
+[2025-09-22 18:05:11,478 ] root - INFO - Entered the get_data_from_local method of DataIngestion class
+[2025-09-22 18:05:11,480 ] root - INFO - Found ZIP file at: C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\data\data.zip
+[2025-09-22 18:05:11,480 ] root - INFO - Exited the get_data_from_local method of DataIngestion class
+[2025-09-22 18:05:11,480 ] root - INFO - Local ZIP file verified.
+[2025-09-22 18:05:11,481 ] root - INFO - Entered the unzip_and_clean method of DataIngestion class
+[2025-09-22 18:05:11,537 ] root - INFO - Unzipping completed successfully.
+[2025-09-22 18:05:11,537 ] root - INFO - Exited the unzip_and_clean method of DataIngestion class
+[2025-09-22 18:05:11,537 ] root - INFO - Data unzipped and ready for use.
+[2025-09-22 18:05:11,537 ] root - INFO - Data ingestion artifacts created: DataIngestionArtifacts(imbalance_data_file_path='C:\\Users\\MD RABIBUL ISLAM\\Desktop\\NLP_Project\\artifacts\\09_22_2025_18_05_11\\DataIngestionArtifacts\\imbalanced_data.csv', raw_data_file_path='C:\\Users\\MD RABIBUL ISLAM\\Desktop\\NLP_Project\\artifacts\\09_22_2025_18_05_11\\DataIngestionArtifacts\\raw_data.csv')
+[2025-09-22 18:05:11,537 ] root - INFO - Exited the initiate_data_ingestion method of DataIngestion class
+[2025-09-22 18:05:11,538 ] root - INFO - Got the train and valid data from local drive
+[2025-09-22 18:05:11,538 ] root - INFO - Exited the start_data_ingestion method of TrainPipeline class
+[2025-09-22 18:05:11,538 ] root - INFO - Entered the run_pipeline method of Trainpipeline class

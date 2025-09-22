@@ -1,0 +1,5 @@
+[2025-09-22 17:39:15,670 ] root - INFO - Entered the run_pipeline method of Trainpipeline class
+[2025-09-22 17:39:15,670 ] root - INFO - Entered the start_data_ingestion method of TrainPipeline class
+[2025-09-22 17:39:15,670 ] root - INFO - Getting the data from local drive
+[2025-09-22 17:39:15,671 ] root - INFO - Entered the initiate_data_ingestion method of DataIngestion class
+[2025-09-22 17:39:15,671 ] root - INFO - Entered the get_data_from_local method of DataIngestion class
