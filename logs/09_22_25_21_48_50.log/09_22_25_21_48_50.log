@@ -1,0 +1,19 @@
+[2025-09-22 21:48:54,506 ] root - INFO - Entered the run_pipeline method of Trainpipeline class
+[2025-09-22 21:48:54,506 ] root - INFO - Entered the start_data_ingestion method of TrainPipeline class
+[2025-09-22 21:48:54,507 ] root - INFO - Getting the data from local drive
+[2025-09-22 21:48:54,507 ] root - INFO - Entered the initiate_data_ingestion method of DataIngestion class
+[2025-09-22 21:48:54,507 ] root - INFO - Entered the get_data_from_local method of DataIngestion class
+[2025-09-22 21:48:54,509 ] root - INFO - Found ZIP file at: C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\data\data.zip
+[2025-09-22 21:48:54,515 ] root - INFO - Exited the get_data_from_local method of DataIngestion class
+[2025-09-22 21:48:54,515 ] root - INFO - Local ZIP file verified.
+[2025-09-22 21:48:54,515 ] root - INFO - Entered the unzip_and_clean method of DataIngestion class
+[2025-09-22 21:48:54,638 ] root - INFO - Unzipping completed successfully.
+[2025-09-22 21:48:54,638 ] root - INFO - Exited the unzip_and_clean method of DataIngestion class
+[2025-09-22 21:48:54,638 ] root - INFO - Data unzipped and ready for use.
+[2025-09-22 21:48:54,638 ] root - INFO - Data ingestion artifacts created: DataIngestionArtifacts(imbalance_data_file_path='C:\\Users\\MD RABIBUL ISLAM\\Desktop\\NLP_Project\\artifacts\\09_22_2025_21_48_50\\DataIngestionArtifacts\\imbalanced_data.csv', raw_data_file_path='C:\\Users\\MD RABIBUL ISLAM\\Desktop\\NLP_Project\\artifacts\\09_22_2025_21_48_50\\DataIngestionArtifacts\\raw_data.csv')
+[2025-09-22 21:48:54,639 ] root - INFO - Exited the initiate_data_ingestion method of DataIngestion class
+[2025-09-22 21:48:54,639 ] root - INFO - Got the train and valid data from local drive
+[2025-09-22 21:48:54,639 ] root - INFO - Exited the start_data_ingestion method of TrainPipeline class
+[2025-09-22 21:48:54,639 ] root - INFO - Entered the start_data_transformation method of TrainPipeline class
+[2025-09-22 21:48:54,639 ] root - INFO - Entered the initiate_data_transformation method of Data transformation class
+[2025-09-22 21:48:54,639 ] root - INFO - Entered into the imbalance_data_cleaning function

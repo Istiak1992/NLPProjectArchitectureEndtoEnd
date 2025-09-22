@@ -18,22 +18,22 @@ class DataTransformation:
         self.data_transformation_config = data_transformation_config
         self.data_ingestion_artifacts = data_ingestion_artifacts
 
-    
 
     def imbalance_data_cleaning(self):
 
         try:
             logging.info("Entered into the imbalance_data_cleaning function")
-            imbalance_data=pd.read_csv(self.data_ingestion_artifacts.imbalance_data_file_path)
+            #imbalance_data=pd.read_csv(self.data_ingestion_artifacts.imbalance_data_file_path)
+            imbalance_data = pd.read_csv(self.data_ingestion_artifacts.imbalance_data_file_path)
+
             imbalance_data.drop(self.data_transformation_config.ID,axis=self.data_transformation_config.AXIS , 
             inplace = self.data_transformation_config.INPLACE)
             logging.info(f"Exited the imbalance data_cleaning function and returned imbalance data {imbalance_data}")
             return imbalance_data 
         except Exception as e:
             raise CustomException(e,sys) from e 
-        
-    
 
+    
     def raw_data_cleaning(self):
         
         try:
@@ -57,7 +57,6 @@ class DataTransformation:
 
         except Exception as e:
             raise CustomException(e,sys) from e
-        
 
     
     def concat_dataframe(self):
@@ -73,8 +72,6 @@ class DataTransformation:
 
         except Exception as e:
             raise CustomException(e, sys) from e
-        
-    
 
     def concat_data_cleaning(self, words):
 
@@ -99,9 +96,7 @@ class DataTransformation:
 
         except Exception as e:
             raise CustomException(e, sys) from e
-        
 
-    
 
     def initiate_data_transformation(self) -> DataTransformationArtifacts:
         try:
@@ -122,3 +117,4 @@ class DataTransformation:
 
         except Exception as e:
             raise CustomException(e, sys) from e
+        
