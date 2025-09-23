@@ -1,0 +1,158 @@
+[2025-09-23 15:54:23,057 ] tensorflow - DEBUG - Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[2025-09-23 15:54:23,790 ] h5py._conv - DEBUG - Creating converter from 7 to 5
+[2025-09-23 15:54:23,791 ] h5py._conv - DEBUG - Creating converter from 5 to 7
+[2025-09-23 15:54:23,791 ] h5py._conv - DEBUG - Creating converter from 7 to 5
+[2025-09-23 15:54:23,791 ] h5py._conv - DEBUG - Creating converter from 5 to 7
+[2025-09-23 15:54:27,796 ] asyncio - DEBUG - Using proactor: IocpProactor
+[2025-09-23 15:54:27,819 ] uvicorn.error - INFO - Started server process [14564]
+[2025-09-23 15:54:27,821 ] uvicorn.error - INFO - Waiting for application startup.
+[2025-09-23 15:54:27,826 ] uvicorn.error - INFO - Application startup complete.
+[2025-09-23 15:54:27,828 ] uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+[2025-09-23 15:54:35,102 ] root - INFO - Running full prediction pipeline
+[2025-09-23 15:54:35,102 ] root - INFO - Looking for model at: artifacts/PredictModel\model.h5
+[2025-09-23 15:54:35,117 ] root - ERROR - Model file not found at artifacts/PredictModel\model.h5
+[2025-09-23 15:54:35,283 ] uvicorn.error - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\hate_spech\pipeline\prediction_pipeline.py", line 55, in get_model_from_local
+    raise FileNotFoundError(f"Model file not found at {self.model_path}")
+FileNotFoundError: Model file not found at artifacts/PredictModel\model.h5
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\hate_spech\pipeline\prediction_pipeline.py", line 84, in predict
+    model_path = self.get_model_from_local()
+  File "C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\hate_spech\pipeline\prediction_pipeline.py", line 59, in get_model_from_local
+    raise CustomException(e, sys) from e
+hate_spech.exception.CustomException: Error occurred in python script [C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\hate_spech\pipeline\prediction_pipeline.py] at line number [55] with error message [Model file not found at artifacts/PredictModel\model.h5]
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\hate_spech\pipeline\prediction_pipeline.py", line 109, in run_pipeline
+    result = self.predict(text)
+  File "C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\hate_spech\pipeline\prediction_pipeline.py", line 101, in predict
+    raise CustomException(e, sys) from e
+hate_spech.exception.CustomException: Error occurred in python script [C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\hate_spech\pipeline\prediction_pipeline.py] at line number [84] with error message [Error occurred in python script [C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\hate_spech\pipeline\prediction_pipeline.py] at line number [55] with error message [Model file not found at artifacts/PredictModel\model.h5]]
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\app.py", line 43, in predict_route
+    text = obj.run_pipeline(text)
+  File "C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\hate_spech\pipeline\prediction_pipeline.py", line 113, in run_pipeline
+    raise CustomException(e, sys) from e
+hate_spech.exception.CustomException: Error occurred in python script [C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\hate_spech\pipeline\prediction_pipeline.py] at line number [109] with error message [Error occurred in python script [C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\hate_spech\pipeline\prediction_pipeline.py] at line number [84] with error message [Error occurred in python script [C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\hate_spech\pipeline\prediction_pipeline.py] at line number [55] with error message [Model file not found at artifacts/PredictModel\model.h5]]]
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 404, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\fastapi\applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\starlette\applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\starlette\middleware\errors.py", line 184, in __call__
+    raise exc
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\starlette\middleware\errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\starlette\exceptions.py", line 93, in __call__
+    raise exc
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 21, in __call__
+    raise e
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\starlette\routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\starlette\routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\starlette\routing.py", line 65, in app
+    response = await func(request)
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\fastapi\routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\fastapi\routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\app.py", line 46, in predict_route
+    raise CustomException(e, sys) from e
+hate_spech.exception.CustomException: Error occurred in python script [C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\app.py] at line number [43] with error message [Error occurred in python script [C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\hate_spech\pipeline\prediction_pipeline.py] at line number [109] with error message [Error occurred in python script [C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\hate_spech\pipeline\prediction_pipeline.py] at line number [84] with error message [Error occurred in python script [C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\hate_spech\pipeline\prediction_pipeline.py] at line number [55] with error message [Model file not found at artifacts/PredictModel\model.h5]]]]
+[2025-09-23 15:56:47,881 ] root - INFO - Running full prediction pipeline
+[2025-09-23 15:56:47,882 ] root - INFO - Looking for model at: artifacts/PredictModel\model.h5
+[2025-09-23 15:56:47,883 ] root - ERROR - Model file not found at artifacts/PredictModel\model.h5
+[2025-09-23 15:56:47,887 ] uvicorn.error - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\hate_spech\pipeline\prediction_pipeline.py", line 55, in get_model_from_local
+    raise FileNotFoundError(f"Model file not found at {self.model_path}")
+FileNotFoundError: Model file not found at artifacts/PredictModel\model.h5
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\hate_spech\pipeline\prediction_pipeline.py", line 84, in predict
+    model_path = self.get_model_from_local()
+  File "C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\hate_spech\pipeline\prediction_pipeline.py", line 59, in get_model_from_local
+    raise CustomException(e, sys) from e
+hate_spech.exception.CustomException: Error occurred in python script [C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\hate_spech\pipeline\prediction_pipeline.py] at line number [55] with error message [Model file not found at artifacts/PredictModel\model.h5]
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\hate_spech\pipeline\prediction_pipeline.py", line 109, in run_pipeline
+    result = self.predict(text)
+  File "C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\hate_spech\pipeline\prediction_pipeline.py", line 101, in predict
+    raise CustomException(e, sys) from e
+hate_spech.exception.CustomException: Error occurred in python script [C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\hate_spech\pipeline\prediction_pipeline.py] at line number [84] with error message [Error occurred in python script [C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\hate_spech\pipeline\prediction_pipeline.py] at line number [55] with error message [Model file not found at artifacts/PredictModel\model.h5]]
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\app.py", line 43, in predict_route
+    text = obj.run_pipeline(text)
+  File "C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\hate_spech\pipeline\prediction_pipeline.py", line 113, in run_pipeline
+    raise CustomException(e, sys) from e
+hate_spech.exception.CustomException: Error occurred in python script [C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\hate_spech\pipeline\prediction_pipeline.py] at line number [109] with error message [Error occurred in python script [C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\hate_spech\pipeline\prediction_pipeline.py] at line number [84] with error message [Error occurred in python script [C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\hate_spech\pipeline\prediction_pipeline.py] at line number [55] with error message [Model file not found at artifacts/PredictModel\model.h5]]]
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 404, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\fastapi\applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\starlette\applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\starlette\middleware\errors.py", line 184, in __call__
+    raise exc
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\starlette\middleware\errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\starlette\exceptions.py", line 93, in __call__
+    raise exc
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 21, in __call__
+    raise e
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\starlette\routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\starlette\routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\starlette\routing.py", line 65, in app
+    response = await func(request)
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\fastapi\routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\fastapi\routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\app.py", line 46, in predict_route
+    raise CustomException(e, sys) from e
+hate_spech.exception.CustomException: Error occurred in python script [C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\app.py] at line number [43] with error message [Error occurred in python script [C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\hate_spech\pipeline\prediction_pipeline.py] at line number [109] with error message [Error occurred in python script [C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\hate_spech\pipeline\prediction_pipeline.py] at line number [84] with error message [Error occurred in python script [C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\hate_spech\pipeline\prediction_pipeline.py] at line number [55] with error message [Model file not found at artifacts/PredictModel\model.h5]]]]
+[2025-09-23 15:58:10,928 ] uvicorn.error - INFO - Shutting down
+[2025-09-23 15:58:11,037 ] uvicorn.error - INFO - Waiting for application shutdown.
+[2025-09-23 15:58:11,038 ] uvicorn.error - INFO - Application shutdown complete.
+[2025-09-23 15:58:11,041 ] uvicorn.error - INFO - Finished server process [14564]

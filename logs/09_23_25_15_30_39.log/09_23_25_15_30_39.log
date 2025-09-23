@@ -1,0 +1,65 @@
+[2025-09-23 15:30:47,217 ] tensorflow - DEBUG - Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[2025-09-23 15:30:47,873 ] h5py._conv - DEBUG - Creating converter from 7 to 5
+[2025-09-23 15:30:47,874 ] h5py._conv - DEBUG - Creating converter from 5 to 7
+[2025-09-23 15:30:47,874 ] h5py._conv - DEBUG - Creating converter from 7 to 5
+[2025-09-23 15:30:47,874 ] h5py._conv - DEBUG - Creating converter from 5 to 7
+[2025-09-23 15:30:51,793 ] asyncio - DEBUG - Using proactor: IocpProactor
+[2025-09-23 15:30:51,818 ] uvicorn.error - INFO - Started server process [14408]
+[2025-09-23 15:30:51,819 ] uvicorn.error - INFO - Waiting for application startup.
+[2025-09-23 15:30:51,820 ] uvicorn.error - INFO - Application startup complete.
+[2025-09-23 15:30:51,821 ] uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+[2025-09-23 15:31:40,217 ] uvicorn.error - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\hate_spech\pipeline\prediction_pipeline.py", line 28, in __init__
+    data_ingestion_artifacts=DataIngestionArtifacts()       # \u2190 instance
+TypeError: DataIngestionArtifacts.__init__() missing 2 required positional arguments: 'imbalance_data_file_path' and 'raw_data_file_path'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\app.py", line 42, in predict_route
+    obj = PredictionPipeline()
+  File "C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\hate_spech\pipeline\prediction_pipeline.py", line 37, in __init__
+    raise CustomException(e, sys) from e
+hate_spech.exception.CustomException: Error occurred in python script [C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\hate_spech\pipeline\prediction_pipeline.py] at line number [28] with error message [DataIngestionArtifacts.__init__() missing 2 required positional arguments: 'imbalance_data_file_path' and 'raw_data_file_path']
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 404, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\fastapi\applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\starlette\applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\starlette\middleware\errors.py", line 184, in __call__
+    raise exc
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\starlette\middleware\errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\starlette\exceptions.py", line 93, in __call__
+    raise exc
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 21, in __call__
+    raise e
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\starlette\routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\starlette\routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\starlette\routing.py", line 65, in app
+    response = await func(request)
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\fastapi\routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\MD RABIBUL ISLAM\miniconda3\envs\hate-spech\lib\site-packages\fastapi\routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\app.py", line 46, in predict_route
+    raise CustomException(e, sys) from e
+hate_spech.exception.CustomException: Error occurred in python script [C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\app.py] at line number [42] with error message [Error occurred in python script [C:\Users\MD RABIBUL ISLAM\Desktop\NLP_Project\hate_spech\pipeline\prediction_pipeline.py] at line number [28] with error message [DataIngestionArtifacts.__init__() missing 2 required positional arguments: 'imbalance_data_file_path' and 'raw_data_file_path']]
+[2025-09-23 15:34:18,535 ] uvicorn.error - INFO - Shutting down
+[2025-09-23 15:34:18,694 ] uvicorn.error - INFO - Waiting for application shutdown.
+[2025-09-23 15:34:18,695 ] uvicorn.error - INFO - Application shutdown complete.
+[2025-09-23 15:34:18,698 ] uvicorn.error - INFO - Finished server process [14408]

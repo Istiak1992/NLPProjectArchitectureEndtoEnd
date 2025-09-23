@@ -65,3 +65,42 @@ class ModelTrainerConfig:
         self.BATCH_SIZE = BATCH_SIZE
         self.VALIDATION_SPLIT = VALIDATION_SPLIT
 
+
+@dataclass
+class ModelEvaluationConfig: 
+    def __init__(self):
+        # Directory for all model evaluation artifacts
+        self.MODEL_EVALUATION_MODEL_DIR: str = os.path.join(
+            os.getcwd(), ARTIFACTS_DIR, MODEL_EVALUATION_ARTIFACTS_DIR
+        )
+
+        # Local directory to store the best model
+        self.BEST_MODEL_DIR_PATH: str = os.path.join(
+            self.MODEL_EVALUATION_MODEL_DIR, BEST_MODEL_DIR
+        )
+
+        # Model name
+        self.MODEL_NAME: str = MODEL_NAME
+
+        # Full path to the best model on local drive
+        self.BEST_MODEL_PATH: str = os.path.join(
+            self.BEST_MODEL_DIR_PATH, self.MODEL_NAME
+        )
+
+
+@dataclass
+class ModelPusherConfig:
+    def __init__(self):
+        # Directory where trained model artifacts are stored
+        self.TRAINED_MODEL_DIR = os.path.join(
+            os.getcwd(), ARTIFACTS_DIR, MODEL_TRAINER_ARTIFACTS_DIR
+        )
+
+        # Final "pushed" model directory (acts like your local model registry)
+        self.SAVED_MODEL_DIR = os.path.join(os.getcwd(), "saved_models")
+
+        # File name of the model
+        self.MODEL_NAME = MODEL_NAME
+
+        # Full path where the model will be saved
+        self.SAVED_MODEL_PATH = os.path.join(self.SAVED_MODEL_DIR, self.MODEL_NAME)
